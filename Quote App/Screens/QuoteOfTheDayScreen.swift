@@ -11,7 +11,7 @@ import SwiftUI
 struct QuoteOfTheDayScreen: View {
     @Environment(\.presentationMode) var presentationMode
 
-    @State var notificationInfo: [AnyHashable: Any]
+    @State var notificationInfo: String?
 
     
     @State private var copied = false
@@ -23,6 +23,18 @@ struct QuoteOfTheDayScreen: View {
     @State private var showShareSheet : Bool = false
 
     @State private var isText : Bool = false
+    
+    @State var showToast : Bool = false
+    @State var toastMessage : String = ""
+    
+    @State private var addLogo : Bool = false
+    
+    @StateObject var coreDataViewModel = CoreDataViewModel()
+
+    
+    
+    @State private var Liked = false
+
     
     var body: some View {
         ZStack{
@@ -63,16 +75,26 @@ struct QuoteOfTheDayScreen: View {
                             Spacer()
                             Button(action: {
 
+                                if(self.Liked){
+                                    self.coreDataViewModel.deleteItem(quote: self.coreDataViewModel.quoteRecords[0])
+                                    self.Liked = false
+
+                                    
+                                }
+                                else{
+                                    self.coreDataViewModel.addItem(name: notificationInfo ?? "")
+                                    self.Liked = true
+                                }
                             }, label: {
                                 VStack{
-                                    Image(systemName: "heart")
+                                    Image(systemName: "heart.fill")
                                         .resizable()
                                         .aspectRatio( contentMode: .fit)
                                         .frame(width: 20, height: 20)
-                                        .foregroundColor(.black)
+                                        .foregroundColor(self.Liked ? .red :  .black)
                                     
                                     Text("Like")
-                                        .foregroundColor(.black)
+                                        .foregroundColor(self.Liked ? .red :  .black)
                                         .font(.body)
                                 }
                             })
@@ -81,8 +103,10 @@ struct QuoteOfTheDayScreen: View {
                             
                             Button(action: {
                                 
+                                self.showToast = true
+                                self.toastMessage = "Image Saved Successfully"
 
-                                guard let image = ImageRenderer(content: myView).uiImage else{
+                                guard let image = ImageRenderer(content: imageView).uiImage else{
                                     
                                     return
                                 }
@@ -108,16 +132,21 @@ struct QuoteOfTheDayScreen: View {
 
                             Menu(content: {
                                 Button(action: {
-                                    self.showShareSheet = true
                                     self.isText = true
+
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        self.showShareSheet = true
+                                    }
                                 }, label: {
                                     Text("Share as Text")
                                 })
                                 
                                 Button(action: {
-                                    self.showShareSheet = true
                                     self.isText = false
 
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        self.showShareSheet = true
+                                    }
                                    
                                 }, label: {
                                     Text("Share as Image")
@@ -174,10 +203,10 @@ struct QuoteOfTheDayScreen: View {
                 .padding(.trailing,20)
                 .padding(.top,10)
                 .sheet(isPresented: $showShareSheet) {
-                    let images = ImageRenderer(content: myView).uiImage
+                    let images = ImageRenderer(content: imageView).uiImage
 
                     if(self.isText){
-                        ActivityView(activityItems: ["self.quoteList.quote"])
+                        ActivityView(activityItems: [notificationInfo ?? "",  "Shared By : https://apps.apple.com/us/app/best-quotes-statuses/id6447101542"])
                     }
                     else{
                         ActivityView(activityItems: [images as Any])
@@ -187,9 +216,13 @@ struct QuoteOfTheDayScreen: View {
                         }
                 
                
-               
+               Spacer()
                 
                 
+            }
+            
+            if(showToast){
+                Toast(isShowing: self.$showToast, message: self.toastMessage)
             }
         }
         .navigationBarHidden(true)
@@ -220,7 +253,7 @@ struct QuoteOfTheDayScreen: View {
                 }
 
 
-                Text(notificationInfo["content"] as? String ?? "")
+                Text(notificationInfo ?? "")
                     .foregroundColor(.white)
                     .font(.headline)
                     .padding(.leading,30)
@@ -243,12 +276,90 @@ struct QuoteOfTheDayScreen: View {
 
 
                 }
+                
+               
             }
 
 
         }
         .frame(width: UIScreen.screenWidth - 40, height: 240)
         .onTapGesture {
+            if currentIndex == imageNames.count - 1 {
+                currentIndex = 0
+            } else {
+                currentIndex += 1
+            }
+        }
+    }
+    
+    var imageView : some View{
+        
+        ZStack{
+            Image(imageNames[currentIndex])
+                .resizable()
+                .frame(height: 540)
+                .aspectRatio(contentMode: .fill)
+
+            VStack{
+                HStack{
+                    Image(uiImage: UIImage(named: AppImages.CommaWhite)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 15, height: 15)
+                        .padding(.leading,30)
+
+                    Image(uiImage: UIImage(named: AppImages.CommaWhite)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 15, height: 15)
+
+                    Spacer()
+                }
+
+
+                Text(notificationInfo ?? "")
+                    .foregroundColor(.white)
+                    .font(.headline)
+                    .padding(.leading,30)
+                    .padding(.trailing,30)
+
+
+                HStack{
+                    Spacer()
+
+                    Image(uiImage: UIImage(named: AppImages.CommaWhiteDown)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 15, height: 15)
+
+                    Image(uiImage: UIImage(named: AppImages.CommaWhiteDown)!)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 15, height: 15)
+                        .padding(.trailing,30)
+
+
+                }
+                
+                    HStack{
+                        Image("logoName")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 120)
+                           
+                            .padding(.top,30)
+                           
+                    }
+                
+            }
+
+
+        }
+        .frame(width: UIScreen.screenWidth - 40, height: 540)
+        .onTapGesture {
+            let impactHeavy = UIImpactFeedbackGenerator(style: .heavy)
+                impactHeavy.impactOccurred()
+            
             if currentIndex == imageNames.count - 1 {
                 currentIndex = 0
             } else {

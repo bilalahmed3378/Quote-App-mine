@@ -12,6 +12,7 @@ import FirebaseMessaging
 @available(iOS 16.0, *)
 struct SplashScreen: View {
     @State var toHome : Bool = false
+
     var body: some View {
         ZStack{
             VStack{
@@ -37,7 +38,8 @@ struct SplashScreen: View {
             }
         }
         .navigationBarHidden(true)
-        
+       
+       
        
     }
 }

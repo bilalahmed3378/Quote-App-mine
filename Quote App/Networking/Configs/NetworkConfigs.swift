@@ -17,11 +17,15 @@ struct NetworkConfig {
 
     
     static let quotebycategory = "quote"
+    static let quoteOfTheDay = "quoteOfTheDay"
+    static let contactus = "contactus"
 
 
 
 
 
+
+    
 
 
 

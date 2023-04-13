@@ -9,6 +9,8 @@ import SwiftUI
 import FirebaseCore
 import Firebase
 import UserNotifications
+import GoogleMobileAds
+
 
 @available(iOS 16.0, *)
 @main
@@ -16,12 +18,24 @@ struct Quote_AppApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
+    @Environment(\.scenePhase) private var scenePhase
+
+    
+    var ad = OpenAd()
+
+    
     var body: some Scene {
         WindowGroup {
             
                 ContentView()
+              
           
         }
+        .onChange(of: scenePhase) { phase in
+                   if phase == .active {
+                       ad.tryToPresentAd()
+                   }
+               }
     }
 }
 
@@ -31,8 +45,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
   func application(_ application: UIApplication,
                    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+      GADMobileAds.sharedInstance().start(completionHandler: nil)
+
     FirebaseApp.configure()
       Messaging.messaging().delegate = self
+      
       
     
       
@@ -73,10 +90,13 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     // Receive displayed notifications for iOS 10 devices
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler : @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
+        let aps = userInfo["aps"] as? [String: Any]
+        let message = aps!["alert"] as? String
         
         if let window = UIApplication.shared.windows.first {
             if #available(iOS 16.0, *) {
-                window.rootViewController?.present(UIHostingController(rootView: QuoteOfTheDayScreen(notificationInfo: userInfo)), animated: true, completion: nil)
+                window.rootViewController?.present(UIHostingController(rootView: QuoteOfTheDayScreen(notificationInfo: message ?? "")), animated: true, completion: nil)
+                
             } else {
                 // Fallback on earlier versions
             }

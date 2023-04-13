@@ -55,25 +55,29 @@ struct MoreOptionsScreen: View {
                 ScrollView(.vertical, showsIndicators: false){
                     Group{
                         
-                        HStack{
-                            Image(systemName: "heart.fill")
-                                .resizable()
-                                .aspectRatio( contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(.red)
-                            
-                            Text("Liked Quotes")
-                                .foregroundColor(.black)
-                                .font(.body)
-                                .padding(.leading,5)
-                            
-                        Spacer()
-                        }
-                        .padding(.leading,20)
-                        .padding(.trailing,20)
+                        NavigationLink(destination: LikedQuotesScreen(), label: {
+                            HStack{
+                                Image(systemName: "heart.fill")
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                    .foregroundColor(.red)
+
+                                Text("Liked Quotes")
+                                    .foregroundColor(.black)
+                                    .font(.body)
+                                    .padding(.leading,5)
+
+                            Spacer()
+                            }
+                            .padding(.leading,20)
+                            .padding(.trailing,20)
+                        })
                         .padding(.top,40)
                         
-                        NavigationLink(destination: {}, label: {
+                        NavigationLink(destination: {
+                            QuoteOfTheDayMainScreen()
+                        }, label: {
                             HStack{
                                 Image(systemName: "quote.closing")
                                     .resizable()
@@ -114,22 +118,25 @@ struct MoreOptionsScreen: View {
 //                        .padding(.trailing,20)
 //                        .padding(.top,10)
                         
-                        HStack{
-                            Image(uiImage: UIImage(named: AppImages.contactUsIcon)!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                            
-                            
-                            Text("Contact Us")
-                                .foregroundColor(.black)
-                                .font(.body)
-                                .padding(.leading,5)
-                            Spacer()
-                        }
-                        .padding(.leading,20)
-                        .padding(.trailing,20)
-                        .padding(.top,10)
+                        NavigationLink(destination: ContactUsScreen(), label: {
+                            HStack{
+                                Image(uiImage: UIImage(named: AppImages.contactUsIcon)!)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                
+                                
+                                Text("Contact Us")
+                                    .foregroundColor(.black)
+                                    .font(.body)
+                                    .padding(.leading,5)
+                                Spacer()
+                            }
+                            .padding(.leading,20)
+                            .padding(.trailing,20)
+                            .padding(.top,10)
+                        })
+                     
                         
                         Button(action: {
                             requestReview()
@@ -199,22 +206,22 @@ struct MoreOptionsScreen: View {
                         
                        
                         
-                        HStack{
-                            Image(systemName: "ellipsis.circle.fill")
-                                .resizable()
-                                .aspectRatio( contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .foregroundColor(.black)
-                            
-                            Text("More Apps")
-                                .foregroundColor(.black)
-                                .font(.body)
-                                .padding(.leading,5)
-                            Spacer()
-                        }
-                        .padding(.leading,20)
-                        .padding(.trailing,20)
-                        .padding(.top,10)
+//                        HStack{
+//                            Image(systemName: "ellipsis.circle.fill")
+//                                .resizable()
+//                                .aspectRatio( contentMode: .fit)
+//                                .frame(width: 20, height: 20)
+//                                .foregroundColor(.black)
+//                            
+//                            Text("More Apps")
+//                                .foregroundColor(.black)
+//                                .font(.body)
+//                                .padding(.leading,5)
+//                            Spacer()
+//                        }
+//                        .padding(.leading,20)
+//                        .padding(.trailing,20)
+//                        .padding(.top,10)
                     }
                     
                     

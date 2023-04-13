@@ -1,25 +1,25 @@
 //
-//  GetQuotesByCategoryApi.swift
+//  QuoteOfTheDayApi.swift
 //  Quote App
 //
-//  Created by Bilal Ahmed on 30/03/2023.
+//  Created by Bilal Ahmed on 02/04/2023.
 //
 
 import Foundation
-import SwiftUI
 
-class GetQuotesByCategoryApi : ObservableObject{
+
+class QuoteOfTheDayApi : ObservableObject{
     
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
     @Published var dataRetrivedSuccessfully = false
-    @Published var apiResponse :  GetQuotesByCategoryResponseModel?
+    @Published var apiResponse :  QuoteOfTheDayResponseModel?
     
     
     
     
-    func getQuotes(quoteList : Binding<[GetQuotesByCategoryDocsModel]>, quoteCategory : String){
+    func getQuoteOfTheDay(){
         
         self.isLoading = true
         self.isApiCallSuccessful = true
@@ -27,7 +27,7 @@ class GetQuotesByCategoryApi : ObservableObject{
         self.isApiCallDone = false
         
         //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.quotebycategory + "?category=\(quoteCategory.replacingOccurrences(of: " ", with: "%20"))") else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.quoteOfTheDay ) else {return}
         
         
         
@@ -60,11 +60,11 @@ class GetQuotesByCategoryApi : ObservableObject{
             
             
             do{
-                print("Got quotes response succesfully.....")
+                print("Got quote of the day response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(GetQuotesByCategoryResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(QuoteOfTheDayResponseModel.self, from: data)
                 
                 DispatchQueue.main.async {
                     self.apiResponse = main
@@ -72,8 +72,7 @@ class GetQuotesByCategoryApi : ObservableObject{
                     
                     if(main.message == "OK" ){
                         self.dataRetrivedSuccessfully = true
-                        quoteList.wrappedValue.removeAll()
-                        quoteList.wrappedValue.append(contentsOf: main.docs)
+                      
                           
                     }
                  

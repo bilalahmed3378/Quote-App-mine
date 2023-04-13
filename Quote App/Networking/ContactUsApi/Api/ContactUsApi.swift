@@ -1,25 +1,25 @@
 //
-//  GetQuotesByCategoryApi.swift
+//  ContactUsApi.swift
 //  Quote App
 //
-//  Created by Bilal Ahmed on 30/03/2023.
+//  Created by Bilal Ahmed on 02/04/2023.
 //
 
 import Foundation
-import SwiftUI
 
-class GetQuotesByCategoryApi : ObservableObject{
+
+class ContactUsApi : ObservableObject{
     
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
     @Published var dataRetrivedSuccessfully = false
-    @Published var apiResponse :  GetQuotesByCategoryResponseModel?
+    @Published var apiResponse :  ContactUsResponseModel?
     
     
     
     
-    func getQuotes(quoteList : Binding<[GetQuotesByCategoryDocsModel]>, quoteCategory : String){
+    func chat(message : String , email : String ,  name : String, whatsapp : Int){
         
         self.isLoading = true
         self.isApiCallSuccessful = true
@@ -27,17 +27,19 @@ class GetQuotesByCategoryApi : ObservableObject{
         self.isApiCallDone = false
         
         //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.quotebycategory + "?category=\(quoteCategory.replacingOccurrences(of: " ", with: "%20"))") else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.contactus) else {return}
         
         
         
+        let data : Data = "message=\(message)&email=\(email)&name=\(name)&whatsapp=\(whatsapp)".data(using: .utf8)!
 
         
         //Create request
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-//        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secretkey")
+        request.httpBody = data
 
         
         
@@ -60,21 +62,18 @@ class GetQuotesByCategoryApi : ObservableObject{
             
             
             do{
-                print("Got quotes response succesfully.....")
+                print("Got contact us response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(GetQuotesByCategoryResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(ContactUsResponseModel.self, from: data)
                 
                 DispatchQueue.main.async {
                     self.apiResponse = main
                     self.isApiCallSuccessful  = true
                     
-                    if(main.message == "OK" ){
+                    if(main.message == "Message Sent Successfully" ){
                         self.dataRetrivedSuccessfully = true
-                        quoteList.wrappedValue.removeAll()
-                        quoteList.wrappedValue.append(contentsOf: main.docs)
-                          
                     }
                  
                     else{

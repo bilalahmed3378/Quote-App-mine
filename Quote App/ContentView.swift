@@ -9,10 +9,20 @@ import SwiftUI
 
 @available(iOS 16.0, *)
 struct ContentView: View {
+    var ad = OpenAd()
+
     var body: some View {
        
         NavigationView{
             SplashScreen()
+                .onAppear{
+                    
+                        
+                        ad.tryToPresentAd()
+                    
+                 
+                        
+                }
         }
         .navigationViewStyle(StackNavigationViewStyle())
         

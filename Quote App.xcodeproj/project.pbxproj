@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		591CB1C929DBF2E200BFCD61 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 591CB1C729DBF2E200BFCD61 /* Model.xcdatamodeld */; };
+		591CB1CC29DBFE8100BFCD61 /* Data Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591CB1CB29DBFE8100BFCD61 /* Data Store.swift */; };
+		591CB1CE29DBFE8E00BFCD61 /* View Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591CB1CD29DBFE8E00BFCD61 /* View Model.swift */; };
+		591CB1D029DC034200BFCD61 /* LikedQuotesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591CB1CF29DC034200BFCD61 /* LikedQuotesScreen.swift */; };
 		592BEACD29CF47B500E2C55C /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BEACC29CF47B500E2C55C /* SplashScreen.swift */; };
 		592BEAD029CF489A00E2C55C /* AppImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BEACF29CF489A00E2C55C /* AppImages.swift */; };
 		592BEAD329CF48BB00E2C55C /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BEAD229CF48BB00E2C55C /* AppColors.swift */; };
@@ -50,10 +54,24 @@
 		59AE1C7C29D57543005504C2 /* NetworkConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE1C7B29D57543005504C2 /* NetworkConfigs.swift */; };
 		59AE1C8129D576C0005504C2 /* GetQuotesByCategoryResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE1C8029D576C0005504C2 /* GetQuotesByCategoryResponseModel.swift */; };
 		59AE1C8329D5784A005504C2 /* GetQuotesByCategoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59AE1C8229D5784A005504C2 /* GetQuotesByCategoryApi.swift */; };
+		59B037A929DFFA810041A064 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 59B037A829DFFA810041A064 /* GoogleMobileAds */; };
+		59B037AB29DFFBB20041A064 /* Admob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B037AA29DFFBB20041A064 /* Admob.swift */; };
 		59C4639829D416D000EF1EC3 /* MoreOptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C4639729D416D000EF1EC3 /* MoreOptionsScreen.swift */; };
+		59CC9D4D29D9F80A00C7FB77 /* QuoteOfTheDayResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D4C29D9F80A00C7FB77 /* QuoteOfTheDayResponseModel.swift */; };
+		59CC9D4F29D9F89E00C7FB77 /* QuoteOfTheDayApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D4E29D9F89E00C7FB77 /* QuoteOfTheDayApi.swift */; };
+		59CC9D5129D9F99F00C7FB77 /* QuoteOfTheDayMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D5029D9F99F00C7FB77 /* QuoteOfTheDayMainScreen.swift */; };
+		59CC9D5329D9FC5F00C7FB77 /* ContactUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D5229D9FC5F00C7FB77 /* ContactUsScreen.swift */; };
+		59CC9D5829D9FE5000C7FB77 /* ContactUsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D5729D9FE5000C7FB77 /* ContactUsResponseModel.swift */; };
+		59CC9D5A29D9FF0300C7FB77 /* ContactUsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D5929D9FF0300C7FB77 /* ContactUsApi.swift */; };
+		59CC9D5C29DA00A600C7FB77 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CC9D5B29DA00A400C7FB77 /* Toast.swift */; };
+		59DD22DC29E7ED61001BDDF8 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59DD22DB29E7ED61001BDDF8 /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		591CB1C829DBF2E200BFCD61 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		591CB1CB29DBFE8100BFCD61 /* Data Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data Store.swift"; sourceTree = "<group>"; };
+		591CB1CD29DBFE8E00BFCD61 /* View Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View Model.swift"; sourceTree = "<group>"; };
+		591CB1CF29DC034200BFCD61 /* LikedQuotesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedQuotesScreen.swift; sourceTree = "<group>"; };
 		592BEACC29CF47B500E2C55C /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		592BEACF29CF489A00E2C55C /* AppImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImages.swift; sourceTree = "<group>"; };
 		592BEAD229CF48BB00E2C55C /* AppColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
@@ -73,7 +91,16 @@
 		59AE1C7B29D57543005504C2 /* NetworkConfigs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigs.swift; sourceTree = "<group>"; };
 		59AE1C8029D576C0005504C2 /* GetQuotesByCategoryResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuotesByCategoryResponseModel.swift; sourceTree = "<group>"; };
 		59AE1C8229D5784A005504C2 /* GetQuotesByCategoryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetQuotesByCategoryApi.swift; sourceTree = "<group>"; };
+		59B037AA29DFFBB20041A064 /* Admob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admob.swift; sourceTree = "<group>"; };
 		59C4639729D416D000EF1EC3 /* MoreOptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreOptionsScreen.swift; sourceTree = "<group>"; };
+		59CC9D4C29D9F80A00C7FB77 /* QuoteOfTheDayResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDayResponseModel.swift; sourceTree = "<group>"; };
+		59CC9D4E29D9F89E00C7FB77 /* QuoteOfTheDayApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDayApi.swift; sourceTree = "<group>"; };
+		59CC9D5029D9F99F00C7FB77 /* QuoteOfTheDayMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteOfTheDayMainScreen.swift; sourceTree = "<group>"; };
+		59CC9D5229D9FC5F00C7FB77 /* ContactUsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsScreen.swift; sourceTree = "<group>"; };
+		59CC9D5729D9FE5000C7FB77 /* ContactUsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsResponseModel.swift; sourceTree = "<group>"; };
+		59CC9D5929D9FF0300C7FB77 /* ContactUsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsApi.swift; sourceTree = "<group>"; };
+		59CC9D5B29DA00A400C7FB77 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
+		59DD22DB29E7ED61001BDDF8 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +128,7 @@
 				5931CB7629D2C77B0020014F /* FirebaseRemoteConfig in Frameworks */,
 				5931CB5229D2C77B0020014F /* FirebaseAppDistribution-Beta in Frameworks */,
 				5931CB5629D2C77B0020014F /* FirebaseAuthCombine-Community in Frameworks */,
+				59B037A929DFFA810041A064 /* GoogleMobileAds in Frameworks */,
 				5931CB7429D2C77B0020014F /* FirebasePerformance in Frameworks */,
 				5931CB6C29D2C77B0020014F /* FirebaseInAppMessagingSwift-Beta in Frameworks */,
 				5931CB7A29D2C77B0020014F /* FirebaseStorage in Frameworks */,
@@ -114,14 +142,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		591CB1CA29DBF30100BFCD61 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				591CB1C729DBF2E200BFCD61 /* Model.xcdatamodeld */,
+				591CB1CB29DBFE8100BFCD61 /* Data Store.swift */,
+				591CB1CD29DBFE8E00BFCD61 /* View Model.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
 		592BEACE29CF483400E2C55C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				59DD22DB29E7ED61001BDDF8 /* View.xib */,
 				592BEACC29CF47B500E2C55C /* SplashScreen.swift */,
 				592BEAD429CF4A5300E2C55C /* HomeScreen.swift */,
 				5987A65129D1C73A0025B3F4 /* QuotesByCategoryScreen.swift */,
 				59C4639729D416D000EF1EC3 /* MoreOptionsScreen.swift */,
 				594D25DA29D83EAD00934037 /* QuoteOfTheDayScreen.swift */,
+				59CC9D5029D9F99F00C7FB77 /* QuoteOfTheDayMainScreen.swift */,
+				591CB1CF29DC034200BFCD61 /* LikedQuotesScreen.swift */,
+				59CC9D5229D9FC5F00C7FB77 /* ContactUsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -133,6 +175,8 @@
 				592BEACF29CF489A00E2C55C /* AppImages.swift */,
 				5931CB8129D2F2270020014F /* AppData.swift */,
 				592BEAD229CF48BB00E2C55C /* AppColors.swift */,
+				59CC9D5B29DA00A400C7FB77 /* Toast.swift */,
+				59B037AA29DFFBB20041A064 /* Admob.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -159,6 +203,7 @@
 				5931CB7E29D2CAF20020014F /* Quote-App-Info.plist */,
 				5931CB7D29D2CAED0020014F /* Quote App.entitlements */,
 				5931CB8529D2FB2A0020014F /* GoogleService-Info.plist */,
+				591CB1CA29DBF30100BFCD61 /* Core Data */,
 				59AE1C7929D57522005504C2 /* Networking */,
 				592BEAD129CF48A100E2C55C /* Resources */,
 				592BEACE29CF483400E2C55C /* Screens */,
@@ -181,6 +226,8 @@
 		59AE1C7929D57522005504C2 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				59CC9D5429D9FE2900C7FB77 /* ContactUsApi */,
+				59CC9D4929D9F7D300C7FB77 /* Quote of the day api */,
 				59AE1C7D29D57686005504C2 /* GetQuotesByCategoryApi */,
 				59AE1C7A29D57543005504C2 /* Configs */,
 			);
@@ -216,6 +263,56 @@
 			isa = PBXGroup;
 			children = (
 				59AE1C8229D5784A005504C2 /* GetQuotesByCategoryApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		59CC9D4929D9F7D300C7FB77 /* Quote of the day api */ = {
+			isa = PBXGroup;
+			children = (
+				59CC9D4B29D9F7EB00C7FB77 /* Api */,
+				59CC9D4A29D9F7E300C7FB77 /* Model */,
+			);
+			path = "Quote of the day api";
+			sourceTree = "<group>";
+		};
+		59CC9D4A29D9F7E300C7FB77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59CC9D4C29D9F80A00C7FB77 /* QuoteOfTheDayResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59CC9D4B29D9F7EB00C7FB77 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				59CC9D4E29D9F89E00C7FB77 /* QuoteOfTheDayApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		59CC9D5429D9FE2900C7FB77 /* ContactUsApi */ = {
+			isa = PBXGroup;
+			children = (
+				59CC9D5629D9FE3800C7FB77 /* Api */,
+				59CC9D5529D9FE3300C7FB77 /* Model */,
+			);
+			path = ContactUsApi;
+			sourceTree = "<group>";
+		};
+		59CC9D5529D9FE3300C7FB77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59CC9D5729D9FE5000C7FB77 /* ContactUsResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59CC9D5629D9FE3800C7FB77 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				59CC9D5929D9FF0300C7FB77 /* ContactUsApi.swift */,
 			);
 			path = Api;
 			sourceTree = "<group>";
@@ -264,6 +361,7 @@
 				5931CB7729D2C77B0020014F /* FirebaseRemoteConfigSwift */,
 				5931CB7929D2C77B0020014F /* FirebaseStorage */,
 				5931CB7B29D2C77B0020014F /* FirebaseStorageCombine-Community */,
+				59B037A829DFFA810041A064 /* GoogleMobileAds */,
 			);
 			productName = "Quote App";
 			productReference = 59436C9329CDC73000ED6903 /* Quote App.app */;
@@ -295,6 +393,7 @@
 			mainGroup = 59436C8A29CDC73000ED6903;
 			packageReferences = (
 				5931CB4629D2C77B0020014F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				59B037A729DFFA810041A064 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = 59436C9429CDC73000ED6903 /* Products */;
 			projectDirPath = "";
@@ -310,6 +409,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DD22DC29E7ED61001BDDF8 /* View.xib in Resources */,
 				59436C9E29CDC73800ED6903 /* Preview Assets.xcassets in Resources */,
 				5931CB8629D2FB2A0020014F /* GoogleService-Info.plist in Resources */,
 				59436C9B29CDC73800ED6903 /* Assets.xcassets in Resources */,
@@ -323,18 +423,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591CB1D029DC034200BFCD61 /* LikedQuotesScreen.swift in Sources */,
 				5987A65229D1C73A0025B3F4 /* QuotesByCategoryScreen.swift in Sources */,
 				592BEACD29CF47B500E2C55C /* SplashScreen.swift in Sources */,
+				59B037AB29DFFBB20041A064 /* Admob.swift in Sources */,
+				59CC9D5329D9FC5F00C7FB77 /* ContactUsScreen.swift in Sources */,
+				59CC9D4D29D9F80A00C7FB77 /* QuoteOfTheDayResponseModel.swift in Sources */,
+				59CC9D5129D9F99F00C7FB77 /* QuoteOfTheDayMainScreen.swift in Sources */,
 				592BEAD029CF489A00E2C55C /* AppImages.swift in Sources */,
 				5931CB8229D2F2270020014F /* AppData.swift in Sources */,
+				59CC9D5A29D9FF0300C7FB77 /* ContactUsApi.swift in Sources */,
 				592BEAD529CF4A5300E2C55C /* HomeScreen.swift in Sources */,
+				591CB1C929DBF2E200BFCD61 /* Model.xcdatamodeld in Sources */,
 				59436C9929CDC73000ED6903 /* ContentView.swift in Sources */,
 				592BEAD329CF48BB00E2C55C /* AppColors.swift in Sources */,
 				59C4639829D416D000EF1EC3 /* MoreOptionsScreen.swift in Sources */,
+				59CC9D5829D9FE5000C7FB77 /* ContactUsResponseModel.swift in Sources */,
+				59CC9D5C29DA00A600C7FB77 /* Toast.swift in Sources */,
+				591CB1CE29DBFE8E00BFCD61 /* View Model.swift in Sources */,
 				59436C9729CDC73000ED6903 /* Quote_AppApp.swift in Sources */,
 				59AE1C7C29D57543005504C2 /* NetworkConfigs.swift in Sources */,
 				594D25DB29D83EAD00934037 /* QuoteOfTheDayScreen.swift in Sources */,
+				591CB1CC29DBFE8100BFCD61 /* Data Store.swift in Sources */,
 				5931CB8429D2F23B0020014F /* Constants.swift in Sources */,
+				59CC9D4F29D9F89E00C7FB77 /* QuoteOfTheDayApi.swift in Sources */,
 				59AE1C8129D576C0005504C2 /* GetQuotesByCategoryResponseModel.swift in Sources */,
 				59AE1C8329D5784A005504C2 /* GetQuotesByCategoryApi.swift in Sources */,
 			);
@@ -393,10 +505,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -447,9 +560,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -471,18 +585,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Quote-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Best Quotes & Statuses";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Needed to save your image";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow App to save images";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codecue.bestquotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -508,18 +623,19 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Quote-App-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Best Quotes & Statuses";
-				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Needed to save your image";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Allow App to save images";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.codecue.bestquotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -560,6 +676,14 @@
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
 				branch = master;
+				kind = branch;
+			};
+		};
+		59B037A729DFFA810041A064 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -701,7 +825,25 @@
 			package = 5931CB4629D2C77B0020014F /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
 		};
+		59B037A829DFFA810041A064 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59B037A729DFFA810041A064 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		591CB1C729DBF2E200BFCD61 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				591CB1C829DBF2E200BFCD61 /* Model.xcdatamodel */,
+			);
+			currentVersion = 591CB1C829DBF2E200BFCD61 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 59436C8B29CDC73000ED6903 /* Project object */;
 }
