@@ -61,46 +61,46 @@ final class OpenAd: NSObject, GADFullScreenContentDelegate {
   
 }
 
-final private class BannerVC: UIViewControllerRepresentable  {
-
-    func makeUIViewController(context: Context) -> UIViewController {
-        let view = GADBannerView(adSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(.infinity))
-
-        let viewController = UIViewController()
-        view.adUnitID = "ca-app-pub-7540620933217632/8392710273"
-        view.rootViewController = viewController
-        viewController.view.addSubview(view)
-        viewController.view.frame = CGRect(origin: .zero, size: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(.infinity).size)
-        view.load(GADRequest())
-
-        return viewController
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
-}
-
-
-struct BannerWrapper: UIViewControllerRepresentable {
-    func makeUIViewController(context: UIViewControllerRepresentableContext<BannerWrapper>) -> UIViewController {
-        let viewController = UIViewController()
-        let bannerView = GADBannerView(adSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(340))
-        addBannerViewToView(bannerView, viewController: viewController)
-        bannerView.adUnitID = "ca-app-pub-7540620933217632/8392710273"
-        bannerView.rootViewController = viewController
-        bannerView.load(GADRequest())
-        return viewController
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<BannerWrapper>) {
-    }
-    
-    private func addBannerViewToView(_ bannerView: GADBannerView, viewController: UIViewController) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
-        viewController.view.addSubview(bannerView)
-        viewController.view.centerXAnchor.constraint(equalTo: bannerView.centerXAnchor).isActive = true
-        viewController.view.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor).isActive = true
-    }
-}
+//final private class BannerVC: UIViewControllerRepresentable  {
+//
+//    func makeUIViewController(context: Context) -> UIViewController {
+//        let view = GADBannerView(adSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(.infinity))
+//
+//        let viewController = UIViewController()
+//        view.adUnitID = "ca-app-pub-7540620933217632/8392710273"
+//        view.rootViewController = viewController
+//        viewController.view.addSubview(view)
+//        viewController.view.frame = CGRect(origin: .zero, size: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(.infinity).size)
+//        view.load(GADRequest())
+//
+//        return viewController
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {}
+//}
+//
+//
+//struct BannerWrapper: UIViewControllerRepresentable {
+//    func makeUIViewController(context: UIViewControllerRepresentableContext<BannerWrapper>) -> UIViewController {
+//        let viewController = UIViewController()
+//        let bannerView = GADBannerView(adSize: GADPortraitAnchoredAdaptiveBannerAdSizeWithWidth(340))
+//        addBannerViewToView(bannerView, viewController: viewController)
+//        bannerView.adUnitID = "ca-app-pub-7540620933217632/8392710273"
+//        bannerView.rootViewController = viewController
+//        bannerView.load(GADRequest())
+//        return viewController
+//    }
+//
+//    func updateUIViewController(_ uiViewController: UIViewController, context: UIViewControllerRepresentableContext<BannerWrapper>) {
+//    }
+//
+//    private func addBannerViewToView(_ bannerView: GADBannerView, viewController: UIViewController) {
+//        bannerView.translatesAutoresizingMaskIntoConstraints = false
+//        viewController.view.addSubview(bannerView)
+//        viewController.view.centerXAnchor.constraint(equalTo: bannerView.centerXAnchor).isActive = true
+//        viewController.view.bottomAnchor.constraint(equalTo: bannerView.bottomAnchor).isActive = true
+//    }
+//}
 
 
 

@@ -18,7 +18,7 @@ struct QuoteOfTheDayScreen: View {
     
     @State private var currentIndex = 0
     
-    let imageNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75" ]
+    let imageNames = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80" ]
     
     @State private var showShareSheet : Bool = false
 
@@ -203,12 +203,12 @@ struct QuoteOfTheDayScreen: View {
                 .padding(.trailing,20)
                 .padding(.top,10)
                 .sheet(isPresented: $showShareSheet) {
-                    let images = ImageRenderer(content: imageView).uiImage
 
                     if(self.isText){
                         ActivityView(activityItems: [notificationInfo ?? "",  "Shared By : https://apps.apple.com/us/app/best-quotes-statuses/id6447101542"])
                     }
                     else{
+                        let images = ImageRenderer(content: imageView).uiImage
                         ActivityView(activityItems: [images as Any])
                     }
 

@@ -175,7 +175,7 @@ struct HomeScreen: View {
                                     .padding(.trailing,20)
                 
 
-                BannerWrapper().frame(height: 50)
+//                BannerWrapper().frame(height: 50)
                 
              
                 
